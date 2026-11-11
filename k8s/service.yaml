@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: devops-day30-service
+spec:
+  type: ClusterIP
+  selector:
+    app: devops-day30
+  ports:
+    - port: 80
+      targetPort: 3000
