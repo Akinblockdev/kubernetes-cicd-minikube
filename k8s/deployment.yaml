@@ -1,29 +1,47 @@
 apiVersion: apps/v1
 kind: Deployment
+
 metadata:
   name: devops-day30-app
+  labels:
+    app: devops-day30
+
 spec:
   replicas: 2
+
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+
+  revisionHistoryLimit: 5
+
   selector:
     matchLabels:
       app: devops-day30
+
   template:
     metadata:
       labels:
         app: devops-day30
+
     spec:
       containers:
         - name: nodejs-app
-          image: devops-day30-app:v1
-          imagePullPolicy: Never
+          image: ghcr.io/dbayode/kubernetes-cicd-minikube:latest
+          imagePullPolicy: IfNotPresent
+
           ports:
             - containerPort: 3000
+
           readinessProbe:
             httpGet:
               path: /health
               port: 3000
             initialDelaySeconds: 3
             periodSeconds: 5
+
           resources:
             requests:
               cpu: "50m"
@@ -31,3 +49,4 @@ spec:
             limits:
               cpu: "250m"
               memory: "128Mi"
+

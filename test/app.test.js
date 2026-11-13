@@ -1,8 +1,9 @@
+
 const test = require('node:test');
 const assert = require('node:assert/strict');
 const app = require('../src/app');
 
-test('GET / returns application information', async () => {
+test('GET / returns application version 2', async () => {
   const server = app.listen(0);
 
   try {
@@ -12,6 +13,7 @@ test('GET / returns application information', async () => {
 
     assert.equal(response.status, 200);
     assert.equal(data.status, 'running');
+    assert.equal(data.version, 'v2');
   } finally {
     server.close();
   }
@@ -27,7 +29,9 @@ test('GET /health returns healthy', async () => {
 
     assert.equal(response.status, 200);
     assert.equal(data.status, 'healthy');
+    assert.equal(data.version, 'v2');
   } finally {
     server.close();
   }
 });
+
