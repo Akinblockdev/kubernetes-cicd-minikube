@@ -1,0 +1,9 @@
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: devops-app-config
+data:
+  APP_NAME: "DevOps Winter Arc"
+  APP_ENV: "development"
+  LOG_LEVEL: "info"
