@@ -1,0 +1,16 @@
+Name:             devops-day36-ingress
+Labels:           app=devops-day30
+Namespace:        default
+Address:          192.168.59.100
+Ingress Class:    nginx
+Default backend:  <default>
+Rules:
+  Host          Path  Backends
+  ----          ----  --------
+  devops.local  
+                /   devops-day30-service:80 (10.244.0.38:3000,10.244.0.35:3000)
+Annotations:    <none>
+Events:
+  Type    Reason  Age                    From                      Message
+  ----    ------  ----                   ----                      -------
+  Normal  Sync    4m39s (x2 over 5m39s)  nginx-ingress-controller  Scheduled for sync

@@ -1,0 +1,21 @@
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: devops-day36-ingress
+  labels:
+    app: devops-day30
+
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: devops.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: devops-day30-service
+                port:
+                  number: 80

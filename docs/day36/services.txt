@@ -1,0 +1,3 @@
+NAME                   TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)   AGE
+devops-day30-service   ClusterIP   10.96.104.10   <none>        80/TCP    5d21h
+kubernetes             ClusterIP   10.96.0.1      <none>        443/TCP   7d20h

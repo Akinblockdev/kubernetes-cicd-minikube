@@ -1,0 +1,2 @@
+NAME                   CLASS   HOSTS          ADDRESS          PORTS   AGE
+devops-day36-ingress   nginx   devops.local   192.168.59.100   80      5m37s

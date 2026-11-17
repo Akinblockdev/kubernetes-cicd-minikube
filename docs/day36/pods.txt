@@ -1,0 +1,4 @@
+NAME                               READY   STATUS    RESTARTS      AGE     IP            NODE       NOMINATED NODE   READINESS GATES
+devops-day30-app-d549cd7d7-kvpr7   1/1     Running   1 (23m ago)   2d22h   10.244.0.38   minikube   <none>           <none>
+devops-day30-app-d549cd7d7-s9dzt   1/1     Running   1 (23m ago)   2d22h   10.244.0.35   minikube   <none>           <none>
+nginx                              1/1     Running   5 (23m ago)   7d19h   10.244.0.36   minikube   <none>           <none>
